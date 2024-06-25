@@ -1,3 +1,47 @@
+# Apache_Airflow_Project Installation
+
+- creating the python virtual environment
+  - python3 -m venv venv
+
+- Activate virtual environment
+  - source venv/bin/activate
+
+- Specify where we will store the confug file and metadatafiles
+  - export AIRFLOW_HOME = /c/path/
+
+- Download the constraints file
+  - wget https://raw.githubusercontent.com/apache/airflow/constraints-2.9.1/constraints-2.9.1.txt
+
+- Install airflow with constraints file
+  - pip install "apache-airflow==2.9.1" --constraint constraints-2.9.1.txt
+
+- Initialize database
+  - airflow db init (mostly sqlite for the db)
+
+- create an admin user
+  - airflow users create --username admin --password ******(whichever you want but remember it) --firstname prince --lastname gp \
+    -- role admin \
+    -- email p**********@gmail.com 
+
+- run the webserver and scheduler
+  - airflow webserver --port 8080
+  - airflow scheduler
+
+
+
+## Components of Airflow
+![airflow_comonents](https://github.com/prince3453/Apache_Airflow_Project/assets/47770221/aa600276-840b-4865-8fd7-6e043db5317a)
+
+## DAGs information
+![DAG](https://github.com/prince3453/Apache_Airflow_Project/assets/47770221/228e9f2d-79b1-4651-abc6-acf431ff6d49)
+
+## process of the data pipelines
+![process_flow](https://github.com/prince3453/Apache_Airflow_Project/assets/47770221/3d9c7634-61e4-449f-8c92-0687a114675c)
+
+## Procedure and framworks can be used as a platform
+![looks_datapipeline](https://github.com/prince3453/Apache_Airflow_Project/assets/47770221/21c83b66-ac2a-49ae-8d64-4a43000e8217)
+
+
 Overview
 ========
 
