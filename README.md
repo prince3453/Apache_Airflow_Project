@@ -90,3 +90,46 @@ Contact
 =======
 
 The Astronomer CLI is maintained with love by the Astronomer team. To report a bug or suggest a change, reach out to our support.
+
+
+CLI commands for airflow
+====
+
+Shows every container : docker ps -s
+Now take the Container ID for the web service 
+
+Exececute the following docker command:
+- docket exec -it e060438075ad  /bin/bash
+
+Then after every time you can use following command as we are using the astro CLI
+- astro dev bash
+
+
+Most important CLI for database
+
+This is use to check the data available in airflow
+- airflow db check
+
+This is use to clean the data
+- airflow db clean 
+
+Export the archived data to csvfile
+- airflow db export-archived
+
+Export the archived data to csvfile
+- airflow db export-archived
+
+Drop the archived data
+- airflow db drop-archived
+
+Intiate the airflow (if we are not using the astro or any other type of airflow runnner)
+- airflow db init
+
+run the specified task during the specified range of date
+- airflow dags backfill mydag --reset-dagrun --rerun-failed-tasks --run-backwards -s 2024-01-07 -e 2024-10-07
+
+Re-synce dags
+- airflow dags reserialize
+
+list of all dags
+- airflow dags list
