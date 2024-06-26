@@ -133,3 +133,9 @@ Re-synce dags
 
 list of all dags
 - airflow dags list
+
+Task instance testing
+- airflow tasks test mydag mytask 2024-01-07
+
+To know about all the commands of airflow
+- airflow cheat-sheet
