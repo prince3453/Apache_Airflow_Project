@@ -139,3 +139,9 @@ Task instance testing
 
 To know about all the commands of airflow
 - airflow cheat-sheet
+
+
+# task dependencies:
+
+- taskA >> taskB
+ - here the taskA is upstream for taskB and taskB is the Downstream for the taskA
