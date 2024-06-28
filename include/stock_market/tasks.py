@@ -1,13 +1,17 @@
 from airflow.hooks.base import BaseHook
 import requests
 import json
+<<<<<<< HEAD
 from minio import Minio
 from io import BytesIO
 
+=======
+>>>>>>> 14223c4bdebb44c0219a19f80c468222a1fce92e
 def _get_stock_prices(url, symbol):
     url = f'{url}{symbol}?metrics=high?&interval=1d&range=3y'
     api = BaseHook.get_connection('stock_api')
     response = requests.get(url, headers=api.extra_dejson['headers'])
+<<<<<<< HEAD
     return json.dumps(response.json()['chart']['result'][0])
 
 def _store_prices(stock):
@@ -34,3 +38,6 @@ def _store_prices(stock):
     )
 
     return f'{objwrite.bucket_name}/{symbol}'
+=======
+    return json.dumps(response.json()['chart']['result'][0])
+>>>>>>> 14223c4bdebb44c0219a19f80c468222a1fce92e

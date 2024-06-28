@@ -12,4 +12,8 @@ ENV AWS_SECRET_ACCESS_KEY minio123
 ENV ENDPOINT http://host.docker.internal:9000
 ENV SPARK_APPLICATION_PYTHON_LOCATION /app/stock_transform.py
 ENV ENABLE_INIT_DAEMON false
+<<<<<<< HEAD
 ENV SPARK_APPLICATION_ARGS "stock-market/TSLA/prices.json"
+=======
+ENV SPARK_APPLICATION_ARGS "stock-market/AAPL/prices.json"
+>>>>>>> 14223c4bdebb44c0219a19f80c468222a1fce92e
