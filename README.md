@@ -144,4 +144,13 @@ To know about all the commands of airflow
 # task dependencies:
 
 - taskA >> taskB
+<<<<<<< HEAD
  - here the taskA is upstream for taskB and taskB is the Downstream for the taskA
+
+
+# docker image with requirements and files :
+
+-  docker build . -t airflow/spark-app
+=======
+ - here the taskA is upstream for taskB and taskB is the Downstream for the taskA
+>>>>>>> 14223c4bdebb44c0219a19f80c468222a1fce92e
