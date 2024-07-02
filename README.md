@@ -144,17 +144,37 @@ To know about all the commands of airflow
 # task dependencies:
 
 - taskA >> taskB
-<<<<<<< HEAD
  - here the taskA is upstream for taskB and taskB is the Downstream for the taskA
 
 
 # docker image with requirements and files :
 
 -  docker build . -t airflow/spark-app
-=======
  - here the taskA is upstream for taskB and taskB is the Downstream for the taskA
 
 
 # docker image with requirements and files :
 
 -  docker build . -t airflow/spark-app
+
+# Backfill and Catchup:
+
+  data_interval = end_interval_date - start_interval_date
+- Catchup: When we have paused the pipeline and run it after a few days, it will run all the dags that are not run from the day the pipeline is stopped.
+  - If it is true: it will run all the remaining pipelines from the date of the pausing the pipeline
+  - If it is False: it will run only the last data interval
+
+```
+@dag = {
+    start_date = datetime(2023,1,1)
+    schedule = '@daily'
+    dag_id = 'my_dag'
+    catchup = false
+}
+```
+
+- Backfill: If we have run the pipeline from certain date and for that we need the previous days pipeline then we can run only that part using the backfill but it will be done manully not by adding into the code
+
+```
+airflow dags backfill -s <start> -e <end> dag_id
+```
