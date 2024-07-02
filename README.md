@@ -178,3 +178,10 @@ To know about all the commands of airflow
 ```
 airflow dags backfill -s <start> -e <end> dag_id
 ```
+
+# When Dags backfill??
+
+- When we have added the new dag and want to run it for the past intervals
+- when a Dag or a task has failed, and want to rerun it for the failed intervals
+- when we have modified an existing DAG and want to apply those changes to past runs.
+- when we want to rerun the specific task or subset of task for a particular range
